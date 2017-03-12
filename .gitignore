@@ -1,0 +1,11 @@
+target
+bin
+.settings
+.project
+.classpath
+.buildNumber
+.tern-project
+version.properties
+.eclipse
+.metadata
+pom.xml.versionsBackup
