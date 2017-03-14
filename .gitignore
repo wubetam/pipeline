@@ -9,3 +9,6 @@ version.properties
 .eclipse
 .metadata
 pom.xml.versionsBackup
+/pipelinedemo/target/test-classes/com/anomeg/*.class
+/pipelinedemo/target/classes/META-INF/maven/com.anomeg/pipelinedemo
+/pipelinedemo/target/classes/META-INF
