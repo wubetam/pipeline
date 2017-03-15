@@ -14,7 +14,7 @@ public class PipelinedemoApplication {
 
 	@RequestMapping("/")
 	public String home() {
-		return "Hello Docker World  version 1";
+		return "Hello another update";
 	}
 
 	public static void main(String[] args) {
