@@ -1,2 +1,2 @@
 # pipeline
-This is demo pipe line using sppring boot , jenkins and docker
+This is demo pipe line using spring boot , jenkins and docker
