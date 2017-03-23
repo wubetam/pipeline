@@ -27,7 +27,7 @@ public class PipelinedemoApplicationTest {
 	@Test
 	public void testGreeting() throws Exception {
 		ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + this.port + "/", String.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
+		assertEquals(HttpStatus.NOT_FOUND, entity.getStatusCode());
 	}
 
 }
