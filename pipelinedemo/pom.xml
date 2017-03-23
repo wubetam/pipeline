@@ -116,7 +116,7 @@
 
 					<!-- doesn't set default values even though the are set in mojo -->
 					<!-- <dockerHost>http://localhost:2375</dockerHost> -->
-					<dockerDirectory>src/main/docker</dockerDirectory>
+					<dockerDirectory>${basedir}/src/main/docker</dockerDirectory>
 					<imageName>wubetam/wube_repo</imageName>
 					<imageTags>
 						<imageTag>${project.version}</imageTag>
