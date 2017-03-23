@@ -5,7 +5,7 @@
 
 	<groupId>com.anomeg</groupId>
 	<artifactId>pipelinedemo</artifactId>
-	<version>0.1.0</version>
+	<version>1.2</version>
 	<packaging>jar</packaging>
 
 	<name>pipelinedemo</name>
@@ -23,10 +23,8 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
-	<!-- 	<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-freemarker</artifactId>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-freemarker</artifactId> 
+			</dependency> -->
 
 
 		<dependency>
@@ -37,10 +35,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		 <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency> 
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -79,7 +77,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-			</dependency>
+		</dependency>
 
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -112,10 +110,21 @@
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.11</version>
+
 				<configuration>
-					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-					<!-- <imageName>wube/${project.artifactId}</imageName> -->
+					<!-- we have to supply values for all params because unit testing framework -->
+
+					<!-- doesn't set default values even though the are set in mojo -->
+					<!-- <dockerHost>http://localhost:2375</dockerHost> -->
 					<dockerDirectory>src/main/docker</dockerDirectory>
+					<imageName>wubetam/wube_repo</imageName>
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+						<!-- <imageTag>latest</imageTag> -->
+					</imageTags>
+					<!-- <imageName>wube/${project.artifactId}</imageName> -->
+					<serverId>docker-hub</serverId>
+					<registryUrl>registry.hub.docker.com</registryUrl>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
@@ -133,8 +142,6 @@
 				<groupId>org.codehaus.mojo</groupId>
 
 				<artifactId>build-helper-maven-plugin</artifactId>
-
-				<version>1.9</version>
 
 				<executions>
 
